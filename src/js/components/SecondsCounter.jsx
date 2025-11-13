@@ -1,12 +1,18 @@
+import Proptypes from 'prop-types';
 
-export const SecondsCounter = ({primerDigito,segundoDigito,tercerDigito,cuartoDigito}) => {
+export const SecondsCounter = ({counter}) => {
+
+const cuarto = Math.floor(counter/1000);
+const tercero = Math.floor(counter/100);
+const segundo = Math.floor(counter/10);
+const primero = Math.floor(counter/1);
  return (
     <div className="contenedor">
         <div className="calendar"><i className="fa-solid fa-clock"></i></div>
-        <div className="cuarto">{cuartoDigito % 10}</div>
-        <div className="tercero">{tercerDigito % 10}</div>
-        <div className="segundo">{segundoDigito % 10}</div>
-        <div className="primero">{primerDigito % 10}</div>
+        <div className="cuarto">{cuarto % 10}</div>
+        <div className="tercero">{tercero % 10}</div>
+        <div className="segundo">{segundo % 10}</div>
+        <div className="primero">{primero % 10}</div>
     </div>
  )
 }
